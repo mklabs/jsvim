@@ -27,19 +27,20 @@ Intro
 JavaScript Api. This works by relying on a simple "protocol" between
 node's land and Vim's land.
 
-Node scripts simply stream to stdout valid JSON stream, which match the
-requirements of the given "protocol". Vim's plugin simply spawn at
-specific lifecyle time given scripts, which output is then parsed
-through the minimalist and most excellent JSON to Vim dictionnary parser
-by Tim Pope, borrowed from [vim-rhubarb](https://github.com/tpope/vim-rhubarb).
+Node scripts simply stream to stdout valid JSON stream, whose output
+match the requirements of the given "protocol". Vim's plugin simply
+spawn at specific lifecyle time given scripts, which output is then
+parsed through the minimalist and most excellent JSON to Vim dictionnary
+parser by Tim Pope, borrowed from
+[vim-rhubarb](https://github.com/tpope/vim-rhubarb).
 
 Scripts should output JSON with the following form, an array of Hash
 objects:
 
 ```json
-[[{
-  cmd: 'set',
-  data: ['String', 'or', { hash: 'object' }]
+[{
+  "cmd": "set",
+  "data": ["String', "or", { "hash": "object" }]
 }, ...]
 ```
 
@@ -88,11 +89,11 @@ Scripts may require the `jsvim` to access the following API. Most of the
 commands are EventEmitters.
 
 Basically, every part of the API is building a model that is converted
-back to JSON that conforms to the appropriate interface. Can can be sync
+back to JSON that conforms to the appropriate interface. Can be sync
 or async.
 
 Every scripts must call the `.end()` method or trigger the `end` event
-once their ready to stream back the resulting JSON when they're ready.
+once they're ready to stream back the resulting JSON.
 
 
 **Example**
