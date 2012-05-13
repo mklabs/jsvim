@@ -40,7 +40,7 @@ objects:
 ```json
 [{
   "cmd": "set",
-  "data": ["String', "or", { "hash": "object" }]
+  "data": ["String", "or", { "hash": "object" }]
 }, ...]
 ```
 
