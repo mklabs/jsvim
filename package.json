@@ -1,0 +1,13 @@
+{
+  "author": "mklabs",
+  "name": "jsvim",
+  "description": "Experimental framework to extend Vim with plain JavaScript",
+  "version": "0.1.0",
+  "repository": {
+    "url": "git://github.com/mklabs/vim-jsvim.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "main": "./lib/jsvim"
+}
+
